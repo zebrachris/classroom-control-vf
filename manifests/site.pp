@@ -49,6 +49,7 @@ node default {
 }
 
 exec { "Run Cowsay":
+  path      =>  "/usr/local/bin",
   command   =>  "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
   creates   =>  "/etc/motd",
 }
