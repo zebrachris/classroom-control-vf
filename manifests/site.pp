@@ -42,8 +42,21 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+
+file { '/etc/motd':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0644',
+  content => "Test Me!\n",
+},
+
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   include role::classroom
 }
+
+
+
+
