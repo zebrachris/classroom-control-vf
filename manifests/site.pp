@@ -49,8 +49,8 @@ node default {
 }
 
 exec { "Run Cowsay":
-  command   =>  "cowsay 'Welcome to ${::fqdn}!' > etc/motd",
-  creates   =>  "etc/motd",
+  command   =>  "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates   =>  "/etc/motd",
 }
 
 
