@@ -1,6 +1,5 @@
 class nginx { 
   File {
-    ensure => file,
     owner => 'root',
     group => 'root',
     mode => '0664',  
@@ -14,9 +13,11 @@ class nginx {
     mode => '0775',
   }
   file { '/var/www/index.html':
-    source => 'puppet:///modules/nginx/index.html',
+     ensure => file,
+     source => 'puppet:///modules/nginx/index.html',
   }
   file { '/etc/nginx/nginx.conf':
+    ensure => file,
     source => 'puppet:///modules/nginx/nginx.conf', 
     require => Package['nginx'],
     notify => Service['nginx'], 
@@ -26,6 +27,7 @@ class nginx {
     mode => '0775',
   }  
   file { '/etc/nginx/conf.d/default.conf':
+    ensure => file,
     source => 'puppet:///modules/nginx/default.conf', 
     require => Package['nginx'],
     notify => Service['nginx'], 
