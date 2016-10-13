@@ -24,7 +24,7 @@ class memcached {
     owner => 'root',
     group => 'root',
     mode => '0644',
-    source => 'puppet:///modules/nginx/default.conf',
+    source => 'puppet:///modules/nginx/index.html',
     require => Package['nginx'],
   }
   
@@ -33,6 +33,6 @@ class memcached {
     enable    => true,
     subscribe => File['/etc/nginx/nginx.conf', 
                       '/etc/nginx/conf.d/default.conf',
-                      ''],
+                      '/var/www/index.html'],
   }
 }
