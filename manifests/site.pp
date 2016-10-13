@@ -50,9 +50,9 @@ node default {
 }
 
 
-node 'zebarchris.puppetlabs.vm' {
-  include skeleton
-}
+#node 'zebarchris.puppetlabs.vm' {
+#  include skeleton
+#}
 
 
 
