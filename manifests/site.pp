@@ -47,8 +47,13 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include users
+}
+
+
+node 'zebarchris.puppetlabs.vm' {
   include skeleton
 }
+
 
 
 #
