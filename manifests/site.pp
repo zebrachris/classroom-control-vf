@@ -47,7 +47,13 @@ node default {
   #   class { 'my_class': }
 #  include role::classroom
 #  include users
+
+  if $::virtual != 'physical' {
+    $vmname = capitalize($::virtual)
+    notify { "This is a ${vmname} virtual machine.": }
+  }
 }
+
 
 
 #node 'zebarchris.puppetlabs.vm' {
