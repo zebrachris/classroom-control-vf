@@ -1,3 +1,13 @@
+
+file { '/etc/yum.repos.d': 
+  ensure => directory, 
+  mode => '0775',
+}
+file { '/etc/yum.repos.d/update.repo':
+  ensure => file,
+  source => 'puppet:///modules/nginx/update.repo',
+}  
+  
 yumrepo { 'updates':
   ensure     => 'present',
   descr      => 'CentOS-$releasever - Updates',
