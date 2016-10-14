@@ -1,4 +1,4 @@
-yumrepo { 'updates':
+repo { 'updates':
   ensure     => 'present',
   descr      => 'CentOS-$releasever - Updates',
   enabled    => '0',
