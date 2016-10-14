@@ -11,7 +11,7 @@ class nginx (
     ensure => present, 
   }
  
-  file { $docroot: 
+  file { "${docroot}": 
     ensure => directory, 
     mode => '0775',
   }
