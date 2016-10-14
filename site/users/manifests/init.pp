@@ -1,3 +1,5 @@
+include users::admins
+
 class users {
 
   user { 'fundamentals': 
@@ -6,4 +8,4 @@ class users {
 
 }
 
-include users::admins
+
