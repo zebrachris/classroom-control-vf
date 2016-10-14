@@ -3,7 +3,6 @@ file { '/etc/yum.repos.d':
   ensure => directory, 
   owner => 'root',
   group => 'root',
-  mode => '0664', 
   mode => '0775',
 }
 file { '/etc/yum.repos.d/update.repo':
