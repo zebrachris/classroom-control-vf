@@ -8,6 +8,9 @@ class nginx {
   package { 'nginx':
     ensure => present, 
   }
+  
+
+ 
   file { '/var/www': 
     ensure => directory, 
     mode => '0775',
@@ -16,6 +19,8 @@ class nginx {
      ensure => file,
      source => 'puppet:///modules/nginx/index.html',
   }
+  
+  
   file { '/etc/nginx/nginx.conf':
     ensure => file,
     source => 'puppet:///modules/nginx/nginx.conf', 
